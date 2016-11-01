@@ -18,3 +18,32 @@ A. No. I save a copy of the model each epoch and let training run until I feel l
 start training 
 from any saved model (where you left off).
 ```
+
+如何使用：（ubuntu下）
+安装luarocks
+```
+sudo apt-get install luarocks
+```
+安装csvigo(必须先装Torch：http://torch.ch/)
+```
+git clone https://github.com/torch/distro.git ~/torch --recursive
+cd ~/torch
+
+# clean old torch installation
+./clean.sh
+# optional clean command (for older torch versions)
+# curl -s https://raw.githubusercontent.com/torch/ezinstall/master/clean-old.sh | bash
+
+# https://github.com/torch/distro : set env to use lua
+TORCH_LUA_VERSION=LUA53 ./install.sh
+source ~/.bashrc
+sudo chown -R $(whoami) ~/.cache
+luarocks install csvigo
+luarocks install class
+luarocks list
+```
+
+运行：
+```
+lua trainAssist.lua <fileId>
+```

@@ -15,6 +15,7 @@ MIN_LEARNING_RATE = 1
 
 function run()
 	local fileId = arg[1]
+	print("\nfileId\n",fileId)
 	assert(fileId ~= nil)
 
 	math.randomseed(os.time())

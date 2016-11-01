@@ -1,0 +1,8 @@
+n_hidden,200
+init_rate,30
+decay_rate,1
+mini_batch_size,100
+dropoutPred,true
+maxGrad,5e-05
+-----
+i	averageErr	auc	testPred	rate	clock
